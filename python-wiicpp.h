@@ -125,9 +125,8 @@ static PyObject * wiicpp_foo(PyObject *self, PyObject* args) {
   	return PyLong_FromLong(42L);
 }
 
-PyObject * wiicpp_init(PyObject *self, PyObject* args) {
-  	//return new BalanceBoard();
-  	return PyLong_FromLong(42L);
+BalanceBoard * wiicpp_init(PyObject *self, PyObject* args) {
+  	return new BalanceBoard();
 }
 
 PyObject * wiicpp_get_total(PyObject *self, PyObject* args) {

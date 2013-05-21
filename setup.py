@@ -10,14 +10,15 @@ from Cython.Build import cythonize
 #        cmdclass = {"build_ext": build_ext},
 #        ext_modules = [module1])
 
-module1 = cythonize(
-  'WiiCpp', 
-  sources = ['python-wiicpp.cpp'], 
-  libraries=["wiicpp"], 
+module1 = Extension(
+  'wiicpp',
+  sources = ['python-wiicpp.pyx'], 
+  libraries=["wiicpp"],
+  include_dirs=['/usr/include/wiic'],
   language="c++")
 
-setup(name = 'WiiC',
+setup(name = 'wiicpp',
         version = '1.0',
         description = 'Python WiiC Wrapper',
         cmdclass = {"build_ext": build_ext},
-        ext_modules = module1)
+        ext_modules = cythonize([module1]))
