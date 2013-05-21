@@ -38,4 +38,3 @@ cdef class PyBalanceBoard:
         
     property topLeft:
       def __get__(self): return self.thisptr.topLeft
-      def __set__(self, x0): self.thisptr.topLeft = x0

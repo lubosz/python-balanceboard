@@ -6,5 +6,5 @@ foo = PyBalanceBoard()
 
 while foo.hasWiiMotes():
   foo.poll()
-  print(foo.topLeft)
-  #foo.printSensors()
+  #print(foo.topLeft)
+  foo.printSensors()
