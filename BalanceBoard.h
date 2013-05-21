@@ -4,8 +4,6 @@
 #include <wiicpp.h>
 #include <map>
 
-//PyObject* PyInit_wiicpp(void); /* Forward */
-
 using std::vector;
 using std::map;
 

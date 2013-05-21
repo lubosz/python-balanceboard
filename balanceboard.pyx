@@ -3,6 +3,8 @@ from libcpp cimport bool
 cdef extern from "BalanceBoard.h":
     cdef cppclass BalanceBoard:
         BalanceBoard()
+        
+        float total, topLeft, topRight, bottomLeft, bottomRight
 
         void poll()
         void printSensors()
@@ -32,3 +34,8 @@ cdef class PyBalanceBoard:
         
     def inputLoop(self):
         self.thisptr.inputLoop()
+        
+        
+    property topLeft:
+      def __get__(self): return self.thisptr.topLeft
+      def __set__(self, x0): self.thisptr.topLeft = x0

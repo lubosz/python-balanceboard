@@ -1,24 +1,5 @@
 #include "BalanceBoard.h"
 
-/*
-#include <fstream>
-#include <unistd.h>
-#include <wiicpp.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <cmath>
-#include <iostream>
-#include <map>
-#include <Python.h>
-*/
-
-
-//PyObject* PyInit_wiicpp(void); /* Forward */
-
-using std::vector;
-using std::map;
-
     BalanceBoard::BalanceBoard() {
         wii = new CWii();
         reloadWiimotes = false;
@@ -95,22 +76,3 @@ void BalanceBoard::inputLoop() {
         printSensors();
     }
 }
-
-/*
-
-int main(int argc, char** argv) {
-    cout.precision(3);
-
-    //pollWimotes();
-    BalanceBoard bb = BalanceBoard();
-
-    while(bb.wiimotes.size()) { // Go so long as there are wiimotes left to poll
-        bb.poll();
-        bb.printSensors();
-    }
-    //std::thread wiiPollThread(pollWimotes);
-    //wiiPollThread.join();
-
-    return 0;
-}
-*/
