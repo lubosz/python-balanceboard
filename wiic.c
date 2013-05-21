@@ -25,8 +25,13 @@ void handle_disconnect(wiimote* wm) {
 }
 
 
+static PyObject * wiic_foo(PyObject *self, PyObject* args);
+
 int main(int argc, char **argv) {
   printf("Hello");
+  
+  wiic_foo(0, 0);
+  
   Py_Exit(0);
   return 0;
 }
