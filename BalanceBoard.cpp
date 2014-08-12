@@ -1,6 +1,12 @@
 #include "BalanceBoard.h"
 
 BalanceBoard::BalanceBoard() {
+      isConnected = false;
+      total = 0;
+      topLeft = 0; topRight = 0; bottomLeft = 0; bottomRight = 0;
+};
+
+void BalanceBoard::connect() {
     wii = new CWii();
     reloadWiimotes = false;
 
@@ -13,6 +19,7 @@ BalanceBoard::BalanceBoard() {
         if (wiimotes.size() == 0)
             cout << "Error: no connected Wiimote" << endl;
     }
+    isConnected = true;
 }
 
 void BalanceBoard::handleEvent(CWiimote &wm) {

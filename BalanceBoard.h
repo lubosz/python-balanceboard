@@ -11,6 +11,9 @@ class BalanceBoard {
 
 public:
 
+    BalanceBoard();
+    ~BalanceBoard() {};
+
     bool reloadWiimotes;
     float total, topLeft, topRight, bottomLeft, bottomRight;
 
@@ -21,7 +24,9 @@ public:
     CWii * wii; // Defaults to 4 remotes
     vector<CWiimote> wiimotes;
 
-    BalanceBoard();
+    bool isConnected;
+
+    void connect();
     void handleEvent(CWiimote &wm);
     void poll();
     void printSensors();
